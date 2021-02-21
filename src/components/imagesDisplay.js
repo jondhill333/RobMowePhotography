@@ -21,6 +21,10 @@ const ImageDisplayStyles = styled.div`
     grid-template-columns: 280px;
     gap: 0;
   }
+  div {
+    width: 400px;
+    height: 400px;
+  }
 `;
 
 const SingleImageStyles = styled.div`
@@ -29,14 +33,21 @@ const SingleImageStyles = styled.div`
 `;
 
 function SingleImage({ image }) {
+  // console.log(image);
+
+  // const fluidImage = image.image.asset.fluid;
+  // console.log(fluidImage);
   return (
     <>
       <SingleImageStyles>
-        <Img
-          fixed={image.image.asset.fixed}
-          alt={image.name}
-          className="image"
-        />
+        <div>
+          <Img
+            fluid={image.image.asset.fluid}
+            // fixed={image.image.asset.fixed}
+            alt={image.name}
+            className="image"
+          />
+        </div>
       </SingleImageStyles>
     </>
   );
@@ -47,7 +58,7 @@ export default function ImageDisplay({ images }) {
     <>
       <ImageDisplayStyles>
         {images.map((image) => (
-          <SingleImage key={image.id} image={image} />
+          <SingleImage key={image.name} image={image} />
         ))}
       </ImageDisplayStyles>
     </>
