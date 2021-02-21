@@ -14,7 +14,7 @@ const NavStyles = styled.div`
   .logo {
     font-family: "Crimson Text";
     font-size: 2.5rem;
-    padding: 0 0 0 10px;
+    padding: 0 0 0 18px;
     color: black;
     display: flex;
     flex-direction: row;
