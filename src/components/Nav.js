@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 
 const NavStyles = styled.div`
-  font-family: "GlacialIndifference";
+  font-family: "Noto Sans";
   height: 50px;
   margin: 0 auto;
   width: 100%;

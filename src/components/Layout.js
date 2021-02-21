@@ -4,7 +4,7 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 // import "normalize.css";
 import GlobalStyles from "../styles/GlobalStyles";
-// import Typography from "../styles/Typography";
+import Typography from "../styles/Typography";
 
 const ContentStyles = styled.div`
   width: 100vw;
@@ -22,7 +22,7 @@ export default function Layout({ children }) {
   return (
     <>
       <GlobalStyles />
-      {/* <Typography /> */}
+      <Typography />
       <ContentStyles>
         <Nav />
         {children}
