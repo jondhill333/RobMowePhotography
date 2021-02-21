@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-// import PictureDisplay from "../components/picturesDisplay";
+import ImageDisplay from "../components/ImagesDisplay";
 // import SEO from "../components/SEO";
 
 const PhotosPageStyles = styled.div`
@@ -13,33 +13,32 @@ export default function PhotosPage({ data }) {
     <>
       {/* <SEO title="Photos" /> */}
       <PhotosPageStyles>
-        This is the photos page
-        {/* <PictureDisplay pictures={data.pictures.nodes} /> */}
+        <ImageDisplay images={data.images.nodes} />
       </PhotosPageStyles>
     </>
   );
 }
 
-// export const query = graphql`
-//   query PictureQuery {
-//     pictures: allSanityProductImages {
-//       nodes {
-//         image {
-//           asset {
-//             fluid(maxHeight: 700) {
-//               ...GatsbySanityImageFluid
-//             }
-//             fixed(width: 270, height: 270) {
-//               ...GatsbySanityImageFixed
-//             }
-//           }
-//         }
-//         name
-//         description
-//         slug {
-//           current
-//         }
-//       }
-//     }
-//   }
-// `;
+export const query = graphql`
+  query ImageQuery {
+    images: allSanityImages {
+      nodes {
+        image {
+          asset {
+            fluid(maxHeight: 700) {
+              ...GatsbySanityImageFluid
+            }
+            fixed(width: 400, height: 400) {
+              ...GatsbySanityImageFixed
+            }
+          }
+        }
+        name
+        description
+        slug {
+          current
+        }
+      }
+    }
+  }
+`;
