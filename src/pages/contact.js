@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-// import SEO from "../components/SEO";
+import SEO from "../components/SEO";
 
 const ContactPageStyles = styled.div`
   width: 100%;
@@ -18,7 +18,7 @@ const ContactPageStyles = styled.div`
 export default function ContactPage({ data }) {
   return (
     <>
-      {/* <SEO title="Contact" /> */}
+      <SEO title="Contact" />
       <ContactPageStyles>
         <div className="messageContainer">This is the contact page</div>
         {/* <form>

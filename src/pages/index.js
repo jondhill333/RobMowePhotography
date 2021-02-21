@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 // import Img from "gatsby-image";
-// import SEO from "../components/SEO";
+import SEO from "../components/SEO";
 
 const HomePageStyles = styled.div`
   height: 100%;
@@ -11,7 +11,7 @@ const HomePageStyles = styled.div`
 export default function HomePage({ data }) {
   return (
     <>
-      {/* <SEO title="Home" /> */}
+      <SEO title="Home" />
       <HomePageStyles>This is the home page</HomePageStyles>
     </>
   );

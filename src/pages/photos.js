@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import ImageDisplay from "../components/ImagesDisplay";
-// import SEO from "../components/SEO";
+import SEO from "../components/SEO";
 
 const PhotosPageStyles = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ const PhotosPageStyles = styled.div`
 export default function PhotosPage({ data }) {
   return (
     <>
-      {/* <SEO title="Photos" /> */}
+      <SEO title="Photos" />
       <PhotosPageStyles>
         <ImageDisplay images={data.images.nodes} />
       </PhotosPageStyles>

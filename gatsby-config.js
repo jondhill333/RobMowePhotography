@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: "robMowe",
+    title: "Rob Mowe",
+    siteUrl: "https://robmowe.netlify.app",
+    description: "Personal Page for Rob Mowe Photography",
+    instagram: "@https://www.instagram.com/robmowe",
   },
   plugins: [
     {

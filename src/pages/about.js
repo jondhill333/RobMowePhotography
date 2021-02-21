@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-// import SEO from "../components/SEO";
+import SEO from "../components/SEO";
 import Img from "gatsby-image";
 
 const AboutPageStyles = styled.div`
@@ -71,7 +71,7 @@ export default function AboutPage({ data }) {
   // const profilePicFluid = profilePic[0].image.asset.fluid;
   return (
     <>
-      {/* <SEO title="About" /> */}
+      <SEO title="About" />
       <AboutPageStyles>
         <section className="profilePictureContainer">
           <Img
