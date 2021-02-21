@@ -1,7 +1,5 @@
-import { graphql, Link, useStaticQuery } from "gatsby";
 import React from "react";
 import styled from "styled-components";
-import Img from "gatsby-image";
 
 const FooterStyles = styled.div`
   height: 50px;
@@ -10,7 +8,8 @@ const FooterStyles = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  font-family: "Noto Sans";
   div {
     padding-right: 20px;
     a {
@@ -25,7 +24,11 @@ export default function Footer() {
       <FooterStyles>
         <div>
           Website by{" "}
-          <a href="https://jonhill.netlify.app/" target="_blank">
+          <a
+            href="https://jonhill.netlify.app/"
+            target="_blank"
+            rel="noreferrer"
+          >
             Jon Hill
           </a>
         </div>

@@ -4,7 +4,6 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 
 const NavStyles = styled.div`
-  font-family: "Noto Sans";
   height: 50px;
   margin: 0 auto;
   width: 100%;
@@ -13,7 +12,8 @@ const NavStyles = styled.div`
   align-items: center;
   background-color: var(--white);
   .logo {
-    font-size: 1rem;
+    font-family: "Crimson Text";
+    font-size: 2.5rem;
     padding: 0 0 0 10px;
     color: black;
     display: flex;
@@ -30,10 +30,11 @@ const NavStyles = styled.div`
   }
 
   .pageLinks {
+    font-family: "Noto Sans";
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   a {
@@ -41,12 +42,7 @@ const NavStyles = styled.div`
     color: black;
   }
 
-  .shopLink {
-    pointer-events: none;
-  }
-  .message {
-    font-size: 1.3rem;
-    display: none;
+  .blogLink {
   }
 
   .socialLinksContainer {
@@ -58,7 +54,7 @@ const NavStyles = styled.div`
   .instagram {
     width: 35px;
     height: 35px;
-    transform: translateY(4px);
+    transform: translateY(2px);
   }
   .email {
     width: 40px;
@@ -108,64 +104,72 @@ const NavStyles = styled.div`
 `;
 
 export default function Nav() {
+  const { otherImages } = useStaticQuery(graphql`
+    query {
+      otherImages: allSanityOtherImages {
+        nodes {
+          image {
+            asset {
+              fluid(maxHeight: 700) {
+                ...GatsbySanityImageFluid
+              }
+              fixed(width: 30, height: 30) {
+                ...GatsbySanityImageFixed
+              }
+            }
+          }
+          name
+        }
+      }
+    }
+  `);
+
+  const instagramLogo = otherImages.nodes.filter(
+    (image) => image.name === "Instagram"
+  );
+  const instagramFluid = instagramLogo[0].image.asset.fluid;
+
+  const emailLogo = otherImages.nodes.filter((image) => image.name === "Email");
+  const emailFluid = emailLogo[0].image.asset.fluid;
+
   return (
     <NavStyles>
       <div className="logo">
         <Link to="/">Rob Mowe Photography</Link>
       </div>
       <nav role="navigation" className="pageLinks">
-        <Link to="/">Gallery</Link>
+        <Link to="/photos">Photos</Link>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
-        <a to="/" className="blogLink">
+        <a
+          href="https://linktr.ee/Robbo27"
+          className="blogLink"
+          target="_blank"
+          rel="noreferrer"
+        >
           Blog
-          <span className="message"> - coming soon</span>
         </a>
       </nav>
       <div className="socialLinksContainer">
         <div className="socialLink instagram">
           <a
-            href="https://www.instagram.com/maggiebettyhomestudio/"
+            href="https://www.instagram.com/robmowe/"
             target="_blank"
             rel="noreferrer"
           >
             <Img
-            //   fluid={instagramFluid}
-            //   alt={instagramLogo.name}
-            // className="instagram"
+              fluid={instagramFluid}
+              alt={instagramLogo.name}
+              className="instagram"
             />
           </a>
         </div>
         <div className="socialLink email">
-          <a href="mailto:maggie@maggiebetty.co.uk">
-            <Img
-            //   fluid={emailFluid}
-            //   alt={emailLogo.name}
-            // className="email"
-            />
+          <a href="mailto:robmowe@hotmail.co.uk">
+            <Img fluid={emailFluid} alt={emailLogo.name} className="email" />
           </a>
         </div>
       </div>
     </NavStyles>
   );
 }
-
-// const { logos } = useStaticQuery(graphql`
-// query {
-//   logos: allSanityLogoImages {
-//     nodes {
-//       image {
-//         asset {
-//           fluid(maxHeight: 700) {
-//             ...GatsbySanityImageFluid
-//           }
-//           fixed(width: 30, height: 30) {
-//             ...GatsbySanityImageFixed
-//           }
-//         }
-//       }
-//       name
-//     }
-//   }
-// }
-// `);

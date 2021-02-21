@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 import NotoSans from "../assets/Noto_Sans/NotoSans-Regular.ttf";
-import CrimsonText from "../assets/Noto_Sans/CrimsonText-Regular.ttf";
+import CrimsonText from "../assets/Crimson_Text/CrimsonText-Regular.ttf";
 
 const Typography = createGlobalStyle`
   @font-face {
