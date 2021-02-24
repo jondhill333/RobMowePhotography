@@ -11,6 +11,8 @@ const PhotosPageStyles = styled.div`
   align-items: center;
   h1 {
     font-family: "Crimson Text";
+    font-size: 3rem;
+    margin: 10px 0;
   }
 `;
 
