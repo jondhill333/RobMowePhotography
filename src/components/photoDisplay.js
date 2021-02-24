@@ -28,25 +28,48 @@ const PhotoDisplayStyles = styled.div`
 `;
 
 const SinglePhotoStyles = styled.div`
-  .image {
+  position: relative;
+  .hoverOverlay {
+    width: 100%;
+    height: 100%;
+    background-color: #cdcfcf;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.25s ease-in-out;
+  }
+  .hoverOverlay:hover {
+    opacity: 0.6;
+  }
+  .hoverOverlay:hover .photoDescription {
+    bottom: 5px;
+    opacity: 1;
+  }
+
+  .photoDescription {
+    position: absolute;
+    font-size: 1.5rem;
+    bottom: -15px;
+    height: 20px;
+    width: 200px;
+    transition: all 0.25s ease-in-out;
+    padding: 0 10px;
+    font-family: "Noto sans";
+    opacity: 0;
   }
 `;
 
 function SinglePhoto({ photo }) {
-  // console.log(photo);
-
-  // const fluidImage = image.image.asset.fluid;
-  // console.log(fluidImage);
   return (
     <>
       <SinglePhotoStyles>
         <div>
-          <Img
-            fluid={photo.image.asset.fluid}
-            // fixed={image.image.asset.fixed}
-            // alt={photo.name}
-            className="image"
-          />
+          <Img fluid={photo.image.asset.fluid} className="image" />
+        </div>
+        <div className="hoverOverlay">
+          {" "}
+          <div className="photoDescription">{photo.description}</div>
         </div>
       </SinglePhotoStyles>
     </>
