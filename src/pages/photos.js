@@ -1,11 +1,15 @@
 import * as React from "react";
 import styled from "styled-components";
-import ImageDisplay from "../components/ImagesDisplay";
+import PhotoDisplay from "../components/photoDisplay";
+import PhotoFilter from "../components/PhotoFilter";
 import SEO from "../components/SEO";
 
 const PhotosPageStyles = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 100%;
 `;
 
 export default function PhotosPage({ data }) {
@@ -13,7 +17,9 @@ export default function PhotosPage({ data }) {
     <>
       <SEO title="Photos" />
       <PhotosPageStyles>
-        <ImageDisplay images={data.images.nodes} />
+        <h1>Photos</h1>
+        <PhotoFilter />
+        <PhotoDisplay photos={data.images.nodes} />
       </PhotosPageStyles>
     </>
   );
