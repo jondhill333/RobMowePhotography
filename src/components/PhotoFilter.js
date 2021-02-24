@@ -29,7 +29,7 @@ export default function PhotoFilter() {
         {category.nodes.map((category) => (
           <button key={category.id}>
             <Link
-              to={`/language/${category.name}`}
+              to={`/category/${category.name}`}
               className="category"
               key={category.id}
             >

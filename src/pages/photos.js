@@ -19,15 +19,19 @@ export default function PhotosPage({ data }) {
       <PhotosPageStyles>
         <h1>Photos</h1>
         <PhotoFilter />
-        <PhotoDisplay photos={data.images.nodes} />
+        <PhotoDisplay photos={data.photos.nodes} />
       </PhotosPageStyles>
     </>
   );
 }
 
 export const query = graphql`
-  query ImageQuery {
-    images: allSanityImages {
+  query PhotoQuery($categoryRegex: String) {
+    photos: allSanityImages(
+      filter: {
+        photoCategory: { elemMatch: { name: { regex: $categoryRegex } } }
+      }
+    ) {
       nodes {
         image {
           asset {
@@ -43,6 +47,10 @@ export const query = graphql`
         description
         slug {
           current
+        }
+        photoCategory {
+          name
+          id
         }
       }
     }
