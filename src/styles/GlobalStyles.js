@@ -13,13 +13,13 @@ const GlobalStyles = createGlobalStyle`
     --otherGrey: #212529;
     --deepBlue:  #141c3a;
     --orange: orange;
-    --backGroundGrey: #F7F7F7;
+    --backgroundGrey: #F7F7F7;
   }
   html {
       font-size: 10px;
   }
   body {
-      /* background-color: var(--backGroundGrey); */
+      /* background-color: var(--backgroundGrey); */
       /* background-color: black; */
       margin: 0;
 

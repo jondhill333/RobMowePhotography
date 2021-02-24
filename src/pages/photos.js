@@ -9,7 +9,9 @@ const PhotosPageStyles = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  h1 {
+    font-family: "Crimson Text";
+  }
 `;
 
 export default function PhotosPage({ data }) {

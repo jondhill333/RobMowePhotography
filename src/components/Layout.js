@@ -9,7 +9,7 @@ import Typography from "../styles/Typography";
 const ContentStyles = styled.div`
   width: 100vw;
   margin: 0 auto;
-  background-color: var(--backGroundGrey);
+  background-color: var(--backgroundGrey);
   height: 100vh;
   overflow-x: hidden;
 
