@@ -2,7 +2,7 @@ import React from "react";
 import Img from "gatsby-image";
 import styled from "styled-components";
 
-const ImageDisplayStyles = styled.div`
+const PhotoDisplayStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 400px);
   gap: 2rem;
@@ -27,40 +27,40 @@ const ImageDisplayStyles = styled.div`
   }
 `;
 
-const SingleImageStyles = styled.div`
+const SinglePhotoStyles = styled.div`
   .image {
   }
 `;
 
-function SingleImage({ image }) {
-  // console.log(image);
+function SinglePhoto({ photo }) {
+  // console.log(photo);
 
   // const fluidImage = image.image.asset.fluid;
   // console.log(fluidImage);
   return (
     <>
-      <SingleImageStyles>
+      <SinglePhotoStyles>
         <div>
           <Img
-            fluid={image.image.asset.fluid}
+            fluid={photo.image.asset.fluid}
             // fixed={image.image.asset.fixed}
-            alt={image.name}
+            // alt={photo.name}
             className="image"
           />
         </div>
-      </SingleImageStyles>
+      </SinglePhotoStyles>
     </>
   );
 }
 
-export default function ImageDisplay({ images }) {
+export default function PhotoDisplay({ photos }) {
   return (
     <>
-      <ImageDisplayStyles>
-        {images.map((image) => (
-          <SingleImage key={image.name} image={image} />
+      <PhotoDisplayStyles>
+        {photos.map((photo) => (
+          <SinglePhoto key={photo.name} photo={photo} />
         ))}
-      </ImageDisplayStyles>
+      </PhotoDisplayStyles>
     </>
   );
 }
