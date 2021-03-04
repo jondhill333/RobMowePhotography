@@ -79,6 +79,9 @@ const NavStyles = styled.div`
       transform: translateY(1px);
     }
   }
+  [aria-current] {
+    color: var(--maisieBrown);
+  }
   @media (max-width: 500px) {
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;

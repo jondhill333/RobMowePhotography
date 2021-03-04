@@ -13,10 +13,14 @@ const FooterStyles = styled.div`
   .copywrite {
     padding-left: 20px;
   }
+  .symbol {
+    color: var(--maisieBrown);
+  }
   .websiteBy {
     padding-right: 20px;
     a {
       text-decoration: none;
+      color: var(--maisieBrown);
     }
   }
 `;
@@ -26,7 +30,7 @@ export default function Footer() {
     <>
       <FooterStyles>
         <div className="copywrite">
-          <span>&#169;</span> Rob Mowe 2021
+          Rob Mowe<span className="symbol"> &#169;</span> 2021
         </div>
         <div className="websiteBy">
           Website by{" "}
