@@ -10,8 +10,10 @@ const ContactPageStyles = styled.div`
   align-items: center;
   color: black;
   font-size: 2rem;
+  font-family: "Noto Sans";
   .messageContainer {
-    width: 60%;
+    width: 35%;
+    text-align: center;
   }
 `;
 
@@ -20,14 +22,12 @@ export default function ContactPage({ data }) {
     <>
       <SEO title="Contact" />
       <ContactPageStyles>
-        <div className="messageContainer">This is the contact page</div>
-        {/* <form>
-          <label>
-            Name:
-            <input type="text" name="name" />
-          </label>
-          <input type="submit" value="Submit" />
-        </form> */}
+        <div className="messageContainer">
+          <p>
+            Please check me out on instagram or send me an email if you wish to
+            get in contact.{" "}
+          </p>
+        </div>
       </ContactPageStyles>
     </>
   );
