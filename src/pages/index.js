@@ -60,9 +60,21 @@ const HomePageStyles = styled.div`
     }
   }
   @media (max-width: 400px) {
+    .profilePictureContainer {
+      align-items: flex-start;
+      /* justify-content: start; */
+    }
     .profilePicture {
       width: 250px;
       height: 250px;
+    }
+    .about {
+      display: flex;
+      justify-content: center;
+    }
+    .aboutTextContainer {
+      width: 95%;
+      /* padding: 0 10px 0 10px; */
     }
   }
 `;

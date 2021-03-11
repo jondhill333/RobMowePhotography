@@ -83,13 +83,13 @@ const NavStyles = styled.div`
     color: var(--maisieBrown);
   }
   @media (max-width: 500px) {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 70% 30%;
     grid-template-rows: 50% 50%;
     height: 70px;
     gap: 0;
     .logo {
       font-size: 2.1rem;
-      padding-left: 10px;
+      padding-left: 8px;
       grid-column: 1;
     }
     .pageLinks {
@@ -97,11 +97,17 @@ const NavStyles = styled.div`
       grid-column: 1 / -1;
       font-size: 1.5rem;
       justify-content: space-between;
-      padding: 0 10px;
+      padding: 0 8px;
     }
     .socialLinksContainer {
       grid-column: 2;
-      padding: 0 10px 0 0;
+      padding: 0 5px 0 0;
+    }
+    .instagram {
+      transform: translateY(1px);
+    }
+    .email {
+      transform: none;
     }
   }
 `;

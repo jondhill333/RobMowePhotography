@@ -14,7 +14,7 @@ const ContentStyles = styled.div`
   overflow-x: hidden;
 
   @media (max-width: 1000px) {
-    width: 95%;
+    /* width: 95%; */
   }
 `;
 

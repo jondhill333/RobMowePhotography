@@ -23,6 +23,14 @@ const FooterStyles = styled.div`
       color: var(--maisieBrown);
     }
   }
+  @media (max-width: 400px) {
+    .copywrite {
+      padding-left: 8px;
+    }
+    .websiteBy {
+      padding-right: 8px;
+    }
+  }
 `;
 
 export default function Footer() {

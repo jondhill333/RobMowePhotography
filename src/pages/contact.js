@@ -15,6 +15,11 @@ const ContactPageStyles = styled.div`
     width: 35%;
     text-align: center;
   }
+  @media (max-width: 400px) {
+    .messageContainer {
+      width: 90%;
+    }
+  }
 `;
 
 export default function ContactPage({ data }) {

@@ -19,11 +19,11 @@ const PhotoDisplayStyles = styled.div`
   }
   @media (max-width: 560px) {
     grid-template-columns: 280px;
-    gap: 0;
+    row-gap: 10px;
   }
   div {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
   }
 `;
 
