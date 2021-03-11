@@ -14,7 +14,7 @@ const NavStyles = styled.div`
   .logo {
     font-family: "Crimson Text";
     font-size: 2.5rem;
-    padding: 0 0 0 18px;
+    padding: 0 0 0 5%;
     color: black;
     display: flex;
     flex-direction: row;
@@ -34,7 +34,7 @@ const NavStyles = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   a {
@@ -49,7 +49,7 @@ const NavStyles = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    padding: 0 10px 0 0;
+    padding: 0 5% 0 0;
   }
   .instagram {
     width: 35px;
@@ -142,7 +142,6 @@ export default function Nav() {
       </div>
       <nav role="navigation" className="pageLinks">
         <Link to="/photos">Photos</Link>
-        <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
         <a
           href="https://linktr.ee/Robbo27"
