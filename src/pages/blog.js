@@ -19,6 +19,12 @@ const ArticleStyles = styled.div`
   margin: 0 20px;
   grid-gap: 10px 10px;
   grid-template-columns: 2fr 2fr 10fr 2fr 2fr;
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 10px 0px;
+  }
   > * {
     grid-column: 3;
   }
@@ -36,6 +42,10 @@ const ArticleStyles = styled.div`
     font-style: italic;
     text-align: center;
     margin: 0;
+    /* height: 100px; */
+    p {
+      margin: 20px 0px;
+    }
   }
 
   .tip {
@@ -100,10 +110,11 @@ export default function InfoPage(props) {
           village. I am a curious soul and so I decided to follow them in the
           hope of discovering something new and wonderful.
         </p>
-        <div className="tip tip-right">
-          <img src={ImageTwo}></img>
-          <figcaption>Pathway on way up!</figcaption>
-        </div>
+        <figure>
+          <img src={BannerShot} alt="wide angle" />
+          <figcaption>Super Nice Photo</figcaption>
+        </figure>
+
         <p>
           At the top of the hill I found a car park. This led to a snowy road
           that meandered further up behind the village. The trekking signs
@@ -131,10 +142,6 @@ export default function InfoPage(props) {
           effort.
         </p>
 
-        <figure>
-          <img src={BannerShot} alt="wide angle" />
-          <figcaption>Super Nice Photo</figcaption>
-        </figure>
         <h3>Off I Go</h3>
         <p>
           On Tuesday I drove to the car park. No point in expending energy
@@ -151,6 +158,10 @@ export default function InfoPage(props) {
           points out I have worked as a walking guide. I know how to walk – sort
           of!
         </p>
+        <div className="tip tip-right">
+          <img src={ImageTwo}></img>
+          <figcaption>Pathway on way up!</figcaption>
+        </div>
         <p>
           Old dude toddled off up the very snowy road. Having donned my gloves I
           set off after him. This was such a magical experience, with the snow
