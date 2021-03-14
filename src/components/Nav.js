@@ -149,14 +149,7 @@ export default function Nav() {
       <nav role="navigation" className="pageLinks">
         <Link to="/photos">Photos</Link>
         <Link to="/contact">Contact</Link>
-        <a
-          href="https://linktr.ee/Robbo27"
-          className="blogLink"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Blog
-        </a>
+        <Link to="/blog">Blog</Link>
       </nav>
       <div className="socialLinksContainer">
         <div className="socialLink instagram">
