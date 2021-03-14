@@ -22,8 +22,8 @@ const PhotoDisplayStyles = styled.div`
     row-gap: 10px;
   }
   div {
-    width: 350px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
   }
 `;
 
