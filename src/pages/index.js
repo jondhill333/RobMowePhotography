@@ -109,6 +109,11 @@ export default function HomePage({ data }) {
               creative photographer. This site is a place for me to store my
               thoughts and photos. Hope you enjoy.
             </p>
+            <p>
+              {" "}
+              Please check me out on instagram or send me an email if you wish
+              to get in contact.
+            </p>
           </div>
         </section>
       </HomePageStyles>
