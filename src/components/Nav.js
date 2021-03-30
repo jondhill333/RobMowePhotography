@@ -149,7 +149,7 @@ export default function Nav() {
       <nav role="navigation" className="pageLinks">
         <Link to="/photos">Photos</Link>
         <Link to="/contact">Contact</Link>
-        <Link to="/blog">Blog</Link>
+        <Link to="/blogs">Blog</Link>
       </nav>
       <div className="socialLinksContainer">
         <div className="socialLink instagram">
