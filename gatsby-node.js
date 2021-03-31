@@ -25,6 +25,35 @@ async function turnCategoriesIntoPages({ graphql, actions }) {
   });
 }
 
+async function turnBlogsIntoPages({ graphql, actions }) {
+  const blogTemplate = path.resolve("./src/templates/BlogPost.js");
+
+  const { data } = await graphql(`
+    query {
+      blogs: allSanityBlogs {
+        nodes {
+          title
+          slug {
+            current
+          }
+        }
+      }
+    }
+  `);
+  data.blogs.nodes.forEach((blog) => {
+    actions.createPage({
+      path: `blogs/${blog.slug.current}`,
+      component: blogTemplate,
+      context: {
+        slug: blog.slug.current,
+      },
+    });
+  });
+}
+
 exports.createPages = async (params) => {
-  await Promise.all([turnCategoriesIntoPages(params)]);
+  await Promise.all([
+    turnCategoriesIntoPages(params),
+    turnBlogsIntoPages(params),
+  ]);
 };

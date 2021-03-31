@@ -18,16 +18,16 @@ function SingleBlog({ blog }) {
   return (
     <>
       <SingleBlogStyles>
-        {/* <Link className="link" href={`/blogs/${blog.slug.current}`}> */}
-        {blog.title}
-        <Img
-          fluid={blog.mainImage.asset.fluid}
-          alt={blog.name}
-          className="item image"
-        />
-        <h3 className="item excerpt">{excerpt}</h3>
-        <p className="item publishedAt">{blog.publishedAt}</p>
-        {/* </Link> */}
+        <Link className="link" href={`/blogs/${blog.slug.current}`}>
+          {blog.title}
+          <Img
+            fluid={blog.mainImage.asset.fluid}
+            alt={blog.name}
+            className="item image"
+          />
+          <h3 className="item excerpt">{excerpt}</h3>
+          <p className="item publishedAt">{blog.publishedAt}</p>
+        </Link>
       </SingleBlogStyles>
     </>
   );

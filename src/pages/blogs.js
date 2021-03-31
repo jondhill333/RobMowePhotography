@@ -21,7 +21,7 @@ export default function BlogsPage({ data }) {
 }
 
 export const query = graphql`
-  query BlogQueryTest {
+  query BlogQuery {
     blogs: allSanityBlogs {
       nodes {
         mainImage {

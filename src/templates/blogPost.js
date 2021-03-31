@@ -84,7 +84,7 @@ const ArticleStyles = styled.div`
 `;
 
 const urlFor = (source) =>
-  urlBuilder({ projectI: "qfg70uq3", dataset: "production" }).image(source);
+  urlBuilder({ projectId: "qfg70uq3", dataset: "production" }).image(source);
 const serializer = {
   types: {
     mainImage: (props) => (
@@ -97,61 +97,64 @@ const serializer = {
   },
 };
 export default function BlogPage({ data }) {
-  const testblogs = data.blogs.nodes[0].body;
-  console.log(testblogs);
-  console.log(data);
+  const portableTextData = data.blog._rawBody;
+  const otherBlogData = data.blog;
 
   return (
     <>
       {/* <SEO title='Important Info' /> */}
-      <ArticleStyles className="post" id="beginning">
-        <PortabeText blocks={testblogs} serializers={serializer}></PortabeText>
+      <ArticleStyles>
+        <h1>{otherBlogData.title}</h1>
+        <Img
+          fluid={otherBlogData.mainImage.asset.fluid}
+          alt={otherBlogData.name}
+          className="mainImage"
+        />
+        <PortabeText
+          blocks={portableTextData}
+          serializers={serializer}
+        ></PortabeText>
       </ArticleStyles>
     </>
   );
 }
 
 export const query = graphql`
-  query BlogQueryTest {
-    blogs: allSanityBlogs {
-      nodes {
-        mainImage {
-          asset {
-            fixed {
-              base64
-              srcWebp
-              srcSetWebp
-            }
-            fluid {
-              base64
-              srcWebp
-              srcSetWebp
-            }
+  query($slug: String!) {
+    blog: sanityBlogs(slug: { current: { eq: $slug } }) {
+      mainImage {
+        asset {
+          fluid(maxHeight: 1000) {
+            ...GatsbySanityImageFluid
           }
-          caption
-        }
-        publishedAt
-        title
-        slug {
-          current
-        }
-        excerpt {
-          children {
-            text
+          fixed(width: 500, height: 500) {
+            ...GatsbySanityImageFixed
           }
         }
-        body {
+        caption
+      }
+      publishedAt
+      title
+      slug {
+        current
+      }
+      excerpt {
+        children {
+          text
+        }
+      }
+      _rawBody
+      body {
+        _key
+        _type
+        style
+        list
+        _rawChildren(resolveReferences: { maxDepth: 10 })
+        children {
           _key
           _type
-          style
-          list
-          _rawChildren(resolveReferences: { maxDepth: 10 })
-          children {
-            _key
-            _type
-            text
-            marks
-          }
+          text
+          marks
         }
       }
     }
