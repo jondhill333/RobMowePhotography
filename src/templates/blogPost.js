@@ -6,63 +6,41 @@ import urlBuilder from "@sanity/image-url";
 
 const ArticleStyles = styled.div`
   font-family: "Crimson Text";
-  font-size: 1.8rem;
+  font-size: 2rem;
   display: grid;
+  line-height: 1.1.%;
   max-width: 2000px;
   margin: 0 20px;
   grid-gap: 10px 10px;
-  grid-template-columns: 2fr 2fr 10fr 2fr 2fr;
+  grid-template-columns: repeat(12, 1fr);
+  .title {
+    grid-column: 3 / -3;
+    text-align: center;
+  }
+  .mainImage {
+    grid-column: 2 / -2;
+  }
+  .text {
+    grid-column: 3 / -3;
+    figure {
+      height: 450px;
+      margin: 0;
+      text-align: center;
+      img {
+        height: 95%;
+        margin: 0 auto;
+      }
+    }
+  }
   h1,
   h2,
   h3,
   p {
-    margin: 10px 0px;
-  }
-  > * {
-    grid-column: 3;
+    margin: 20px 0px;
   }
 
-  > figure {
-    margin: 0;
-    grid-column: 2 / -2;
-  }
   figcaption {
     font-size: 1.5rem;
-  }
-
-  > blockquote {
-    grid-column: 1 / -1;
-    font-size: 60px;
-    font-style: italic;
-    text-align: center;
-    margin: 0;
-    /* height: 100px; */
-    p {
-      margin: 20px 0px;
-    }
-  }
-
-  .tip {
-    padding: 10px;
-    grid-row: span 5;
-    align-self: start;
-  }
-
-  .tip-left {
-    grid-column: 1 / span 2;
-    text-align: right;
-    /* border-right: 2px solid var(--red); */
-  }
-
-  .tip-right {
-    grid-column: span 2 / -1;
-    /* border-left: 2px solid var(--red); */
-  }
-
-  img {
-    max-width: 100%;
-    width: 100%;
-    object-fit: contain;
   }
 
   @media (max-width: 500px) {
@@ -104,7 +82,7 @@ export default function BlogPage({ data }) {
     <>
       {/* <SEO title='Important Info' /> */}
       <ArticleStyles>
-        <h1>{otherBlogData.title}</h1>
+        <h1 className="title">{otherBlogData.title}</h1>
         <Img
           fluid={otherBlogData.mainImage.asset.fluid}
           alt={otherBlogData.name}
@@ -113,6 +91,7 @@ export default function BlogPage({ data }) {
         <PortabeText
           blocks={portableTextData}
           serializers={serializer}
+          className="text"
         ></PortabeText>
       </ArticleStyles>
     </>
@@ -124,7 +103,7 @@ export const query = graphql`
     blog: sanityBlogs(slug: { current: { eq: $slug } }) {
       mainImage {
         asset {
-          fluid(maxHeight: 1000) {
+          fluid(maxHeight: 400) {
             ...GatsbySanityImageFluid
           }
           fixed(width: 500, height: 500) {
