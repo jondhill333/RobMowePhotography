@@ -3,6 +3,9 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 import PortabeText, { propTypes } from "@sanity/block-content-to-react";
 import urlBuilder from "@sanity/image-url";
+import { IconButton } from "@chakra-ui/react";
+import { FaLongArrowAltLeft } from "@react-icons/all-files/fa/FaLongArrowAltLeft";
+import { Link } from "gatsby";
 
 const ArticleStyles = styled.div`
   font-family: "Crimson Text";
@@ -13,6 +16,14 @@ const ArticleStyles = styled.div`
   margin: 0 20px;
   grid-gap: 10px 10px;
   grid-template-columns: repeat(12, 1fr);
+  .backLink {
+    grid-column: 2;
+  }
+  .backLinkButton {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
   .title {
     grid-column: 3 / -3;
     text-align: center;
@@ -82,6 +93,13 @@ export default function BlogPage({ data }) {
     <>
       {/* <SEO title='Important Info' /> */}
       <ArticleStyles>
+        <Link className="backLink" to="/blogs">
+          <IconButton
+            className="backLinkButton"
+            aria-label="Navigate back to blogs page"
+            icon={<FaLongArrowAltLeft />}
+          />
+        </Link>
         <h1 className="title">{otherBlogData.title}</h1>
         <Img
           fluid={otherBlogData.mainImage.asset.fluid}
@@ -93,6 +111,13 @@ export default function BlogPage({ data }) {
           serializers={serializer}
           className="text"
         ></PortabeText>
+        <Link className="backLink" to="/blogs">
+          <IconButton
+            className="backLinkButton"
+            aria-label="Navigate back to blogs page"
+            icon={<FaLongArrowAltLeft />}
+          />
+        </Link>
       </ArticleStyles>
     </>
   );
