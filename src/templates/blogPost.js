@@ -42,6 +42,12 @@ const ArticleStyles = styled.div`
         margin: 0 auto;
       }
     }
+    blockquote {
+      font-size: 40px;
+      margin: 40px 0;
+      text-align: center;
+      transform: translateX(-1%);
+    }
   }
   h1,
   h2,
