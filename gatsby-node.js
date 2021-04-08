@@ -15,7 +15,7 @@ async function turnCategoriesIntoPages({ graphql, actions }) {
   `);
   data.category.nodes.forEach((category) => {
     actions.createPage({
-      path: `category/${category.name}`,
+      path: `photos/${category.name}`,
       component: categoryTemplate,
       context: {
         category: category.name,
