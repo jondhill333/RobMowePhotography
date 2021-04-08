@@ -42,9 +42,6 @@ const NavStyles = styled.div`
     color: black;
   }
 
-  .blogLink {
-  }
-
   .socialLinksContainer {
     display: flex;
     flex-direction: row;

@@ -156,19 +156,6 @@ export const query = graphql`
         }
       }
       _rawBody
-      body {
-        _key
-        _type
-        style
-        list
-        _rawChildren(resolveReferences: { maxDepth: 10 })
-        children {
-          _key
-          _type
-          text
-          marks
-        }
-      }
     }
   }
 `;

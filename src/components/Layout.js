@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Nav from "./Nav";
 import Footer from "./Footer";
-// import "normalize.css";
 import GlobalStyles from "../styles/GlobalStyles";
 import Typography from "../styles/Typography";
 
@@ -14,7 +13,6 @@ const ContentStyles = styled.div`
   overflow-x: hidden;
 
   @media (max-width: 1000px) {
-    /* width: 95%; */
   }
 `;
 
