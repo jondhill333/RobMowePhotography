@@ -26,7 +26,7 @@ async function turnCategoriesIntoPages({ graphql, actions }) {
 }
 
 async function turnBlogsIntoPages({ graphql, actions }) {
-  const blogTemplate = path.resolve("./src/templates/BlogPost.js");
+  const blogTemplate = path.resolve("./src/templates/blogPost.js");
 
   const { data } = await graphql(`
     query {
