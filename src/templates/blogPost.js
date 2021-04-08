@@ -62,22 +62,53 @@ const ArticleStyles = styled.div`
     font-size: 1.5rem;
   }
 
-  @media (max-width: 500px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 98%;
-    max-width: 98%;
-    margin: 10px 20px 50px 10px;
-    gap: 0;
-
-    > blockquote {
-      font-size: 40px;
+  @media (max-width: 1100px) {
+    .mainImage {
+      grid-column: 1 / -1;
     }
-    h2 {
-      text-align: center;
+    .text {
+      grid-column: 2 / -2;
+    }
+    .backLink {
+      grid-column: 1;
+    }
+    img {
+      width: 500px;
+      object-fit: contain;
     }
   }
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 98%;
+    margin: 1% 1%;
+    gap: 0;
+    .text {
+      blockquote {
+        font-size: 30px;
+        margin: 20px 0;
+      }
+      figure {
+        height: 300px;
+        margin-bottom: 30px;
+      }
+      img {
+        width: 350px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  /* @media (max-width: 400px) {
+    width: 98%;
+    margin: 0 auto;
+    text-align: start;
+    .backLink {
+      margin: 0;
+    }
+  } */
 `;
 
 const urlFor = (source) =>

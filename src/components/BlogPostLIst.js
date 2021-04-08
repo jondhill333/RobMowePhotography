@@ -41,6 +41,24 @@ const SingleBlogStyles = styled.div`
   :hover .image {
     transform: scale(1.01);
   }
+  @media (max-width: 1100px) {
+    .image {
+      width: 280px;
+      height: 200px;
+    }
+  }
+  @media (max-width: 900px) {
+    .link {
+      flex-direction: column;
+      justify-content: center;
+      width: 95%;
+    }
+    .image {
+      width: auto;
+      object-fit: contain;
+      /* height: 300px; */
+    }
+  }
 `;
 
 const ProjectListStyles = styled.div``;
