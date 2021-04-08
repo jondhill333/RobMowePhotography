@@ -19,13 +19,13 @@ export default function SEO({ children, location, description, title, image }) {
   return (
     <Helmet titleTemplate={`%s - ${site.siteMetadata.title}`}>
       <html lang="en" />
-      <link rel="icon" type="image/png" href="/Cavalier.png" />
+      <link rel="icon" type="image/png" href="/robMowe.jpg" />
       <title>{title}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta charset="utf-8" />
       <meta name="description" content={site.siteMetadata.description} />
       {location && <meta property="og:url" content={location.href} />}
-      <meta property="og:image" content={image || "/Cavalier.png"} />
+      <meta property="og:image" content={image || "/robMowe.jpg"} />
       <meta property="og:title" content={title} key="ogtitle" />
       <meta
         property="og:site_name"

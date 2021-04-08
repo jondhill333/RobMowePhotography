@@ -87,7 +87,7 @@ export default function HomePage({ data }) {
   // const profilePicFixed = profilePic[0].image.asset.fixed;
   return (
     <>
-      <SEO title="About" />
+      <SEO title="Home" />
       <HomePageStyles>
         <section className="profilePictureContainer">
           <Img

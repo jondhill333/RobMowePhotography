@@ -6,6 +6,7 @@ import urlBuilder from "@sanity/image-url";
 import { IconButton } from "@chakra-ui/react";
 import { FaLongArrowAltLeft } from "@react-icons/all-files/fa/FaLongArrowAltLeft";
 import { Link } from "gatsby";
+import SEO from "../components/SEO";
 
 const ArticleStyles = styled.div`
   font-family: "Crimson Text";
@@ -97,7 +98,7 @@ export default function BlogPage({ data }) {
 
   return (
     <>
-      {/* <SEO title='Important Info' /> */}
+      <SEO title="A blog by" />
       <ArticleStyles>
         <Link className="backLink" to="/blogs">
           <IconButton

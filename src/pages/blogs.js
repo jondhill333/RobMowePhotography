@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Img from "gatsby-image";
 import BlogPostList from "../components/BlogPostLIst";
+import SEO from "../components/SEO";
 
 const BlogsPageStyles = styled.div`
   margin: 2% 10%;
@@ -16,7 +17,7 @@ export default function BlogsPage({ data }) {
   const blogs = data.blogs.nodes;
   return (
     <>
-      {/* <SEO title='Important Info' /> */}
+      <SEO title="Blogs" />
       <BlogsPageStyles className="post" id="beginning">
         <h1>Blogs</h1>
         <BlogPostList blogs={blogs} />

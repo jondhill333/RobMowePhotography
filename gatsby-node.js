@@ -46,6 +46,7 @@ async function turnBlogsIntoPages({ graphql, actions }) {
       component: blogTemplate,
       context: {
         slug: blog.slug.current,
+        title: blog.title,
       },
     });
   });
