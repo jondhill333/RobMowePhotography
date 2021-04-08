@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
-import PortabeText, { propTypes } from "@sanity/block-content-to-react";
+import PortabeText from "@sanity/block-content-to-react";
 import urlBuilder from "@sanity/image-url";
 import { IconButton } from "@chakra-ui/react";
 import { FaLongArrowAltLeft } from "@react-icons/all-files/fa/FaLongArrowAltLeft";
 import { Link } from "gatsby";
 import SEO from "../components/SEO";
+import { graphql } from "gatsby";
 
 const ArticleStyles = styled.div`
   font-family: "Crimson Text";

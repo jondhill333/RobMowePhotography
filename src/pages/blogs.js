@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-
-import Img from "gatsby-image";
 import BlogPostList from "../components/BlogPostLIst";
 import SEO from "../components/SEO";
+import { graphql } from "gatsby";
 
 const BlogsPageStyles = styled.div`
   margin: 2% 10%;

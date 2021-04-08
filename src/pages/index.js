@@ -2,6 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
 import SEO from "../components/SEO";
+import { graphql } from "gatsby";
 
 const HomePageStyles = styled.div`
   width: 100%;
@@ -28,7 +29,6 @@ const HomePageStyles = styled.div`
     width: 50%;
     font-size: 1.8rem;
     text-align: justify;
-    /* padding: 0 6% 0 0; */
   }
   .aboutTextContainer {
     width: 80%;
@@ -62,7 +62,6 @@ const HomePageStyles = styled.div`
   @media (max-width: 400px) {
     .profilePictureContainer {
       align-items: flex-start;
-      /* justify-content: start; */
     }
     .profilePicture {
       width: 250px;
@@ -74,7 +73,6 @@ const HomePageStyles = styled.div`
     }
     .aboutTextContainer {
       width: 95%;
-      /* padding: 0 10px 0 10px; */
     }
   }
 `;
@@ -84,7 +82,6 @@ export default function HomePage({ data }) {
     (image) => image.name === "Profile Picture"
   );
   const profilePicFluid = profilePic[0].image.asset.fluid;
-  // const profilePicFixed = profilePic[0].image.asset.fixed;
   return (
     <>
       <SEO title="Home" />
@@ -92,7 +89,6 @@ export default function HomePage({ data }) {
         <section className="profilePictureContainer">
           <Img
             fluid={profilePicFluid}
-            // fluid={profilePicFixed}
             alt={profilePic.name}
             className="profilePicture"
           />

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PhotoDisplay from "../components/photoDisplay";
 import PhotoFilter from "../components/PhotoFilter";
 import SEO from "../components/SEO";
+import { graphql } from "gatsby";
 
 const PhotosPageStyles = styled.div`
   display: flex;
