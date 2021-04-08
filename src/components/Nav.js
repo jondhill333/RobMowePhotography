@@ -144,7 +144,7 @@ export default function Nav() {
   return (
     <NavStyles>
       <div className="logo">
-        <Link to="/">Rob Mowe Photography</Link>
+        <Link to="/">Rob Mowe</Link>
       </div>
       <nav role="navigation" className="pageLinks">
         <Link to="/photos">Photos</Link>

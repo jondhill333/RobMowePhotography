@@ -4,10 +4,15 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 import BlogPostList from "../components/BlogPostLIst";
 
-const BlogsPageStyles = styled.div``;
+const BlogsPageStyles = styled.div`
+  margin: 2% 10%;
+  font-family: "Crimson Text";
+  h1 {
+    font-size: 3rem;
+  }
+`;
 
 export default function BlogsPage({ data }) {
-  console.log(data);
   const blogs = data.blogs.nodes;
   return (
     <>
