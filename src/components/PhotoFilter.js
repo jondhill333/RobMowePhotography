@@ -1,10 +1,8 @@
 import { graphql, Link, useStaticQuery } from "gatsby";
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import Img from "gatsby-image";
 
 const PhotoFilterStyles = styled.div`
-  /* border: solid red 1px; */
   display: flex;
   flex-direction: row;
   font-size: 1.5rem;
@@ -35,7 +33,7 @@ const PhotoFilterStyles = styled.div`
 `;
 
 export default function PhotoFilter() {
-  const { category, projects } = useStaticQuery(graphql`
+  const { category } = useStaticQuery(graphql`
     query {
       category: allSanityCategory {
         nodes {
@@ -49,12 +47,11 @@ export default function PhotoFilter() {
   return (
     <>
       <PhotoFilterStyles>
-        {/* {/* <h3>Click on a button to filter the grid!</h3> */}
         <Link to="/photos">
           <div className="category">All</div>
         </Link>
         {category.nodes.map((category) => (
-          <Link to={`/category/${category.name}`} key={category.id}>
+          <Link to={`/photos/${category.name}`} key={category.id}>
             <div className={`category ${category.name}`}>{category.name}</div>
           </Link>
         ))}
